@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E1E"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="700dp"
+        android:layout_height="350dp"
+        android:background="#F7E8CC"
+        android:orientation="horizontal"
+        android:elevation="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#F4C548"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selamat Datang !"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ayo daftar dan rasakan\nkebermanfaatan aplikasi CALISTALK"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"/>
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:text="Sign In"
+                android:textAllCaps="false"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#F56B8A"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buat Akun"
+                android:textColor="#68B59B"
+                android:textSize="36sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Username"
+                android:backgroundTint="#A5D0B5"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Email"
+                android:backgroundTint="#A5D0B5"
+                android:layout_marginTop="14dp"/>
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Password"
+                android:backgroundTint="#A5D0B5"
+                android:layout_marginTop="14dp"/>
+
+            <Button
+                android:id="@+id/btnDaftar"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:text="Daftar"
+                android:textAllCaps="false"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#68B59B"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

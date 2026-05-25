@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "425206785423",
+    "project_id": "calistalk",
+    "storage_bucket": "calistalk.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425206785423:android:e901a6f7a08d34411d17fa",
+        "android_client_info": {
+          "package_name": "com.example.calistalk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqGM2bhOrHtb-7DaNf15xtmFhnxmADCPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

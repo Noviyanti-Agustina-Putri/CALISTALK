@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E1E"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="700dp"
+        android:layout_height="350dp"
+        android:background="#F7E8CC"
+        android:orientation="horizontal"
+        android:elevation="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign in"
+                android:textColor="#68B59B"
+                android:textSize="36sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/etLoginUsername"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Email"
+                android:backgroundTint="#A5D0B5"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/etLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Password"
+                android:backgroundTint="#A5D0B5"
+                android:layout_marginTop="14dp"/>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:text="Sign In"
+                android:textAllCaps="false"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#68B59B"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#F4C548"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Halo, Teman!"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Segera Masuk dan mulai gunakan\nlayanan kami segera"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"/>
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:text="Sign Up"
+                android:textAllCaps="false"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#F56B8A"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

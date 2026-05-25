@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7E7D2"
+    tools:context=".MainActivity">
+
+    <!-- SIDEBAR -->
+    <LinearLayout
+        android:id="@+id/sidebar"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:background="@drawable/bg_sidebar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- MENU 1 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_mic"
+                app:tint="#000000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belajar\nPengucapan"
+                android:textAlignment="center"
+                android:textColor="#666666"
+                android:textSize="9sp"/>
+        </LinearLayout>
+
+        <!-- MENU 2 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_headset"
+                app:tint="#000000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belajar\nMendengar"
+                android:textAlignment="center"
+                android:textColor="#666666"
+                android:textSize="9sp"/>
+        </LinearLayout>
+
+        <!-- MENU 3 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_game"
+                app:tint="#000000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mini Game"
+                android:textAlignment="center"
+                android:textColor="#666666"
+                android:textSize="9sp"/>
+        </LinearLayout>
+
+        <!-- ACTIVE -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_edit"
+                app:tint="#58BE9D"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belajar\nMenulis"
+                android:textAlignment="center"
+                android:textColor="#58BE9D"
+                android:textStyle="bold"
+                android:textSize="9sp"/>
+        </LinearLayout>
+
+        <!-- MENU 5 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_calculate"
+                app:tint="#000000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belajar\nBerhitung"
+                android:textAlignment="center"
+                android:textColor="#666666"
+                android:textSize="9sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- BACK BUTTON -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:background="#FFFFFF"
+        android:padding="8dp"
+        android:src="@drawable/ic_back"
+        app:tint="#58BE9D"
+        app:layout_constraintStart_toEndOf="@id/sidebar"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- HEADER ICON -->
+    <ImageView
+        android:id="@+id/headerIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:src="@drawable/ic_edit"
+        app:tint="#D8A200"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
+        app:layout_constraintTop_toTopOf="@id/btnBack"/>
+
+    <!-- TITLE -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Belajar Menulis"
+        android:textColor="#11845B"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/headerIcon"
+        app:layout_constraintTop_toTopOf="@id/headerIcon"/>
+
+    <!-- SUBTITLE -->
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Belajar menulis huruf dan angka"
+        android:textColor="#11845B"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"/>
+
+    <!-- CARD 1 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="18dp"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintStart_toStartOf="@id/btnBack"
+        app:layout_constraintTop_toBottomOf="@id/headerIcon">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#F8E08B"
+                android:padding="6dp"
+                android:src="@drawable/ic_text"
+                app:tint="#D8A200"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tracing Huruf"
+                    android:textColor="#D8A200"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belajar menebalkan huruf"
+                    android:textColor="#D8A200"
+                    android:textSize="10sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_arrow"
+                app:tint="#D8A200"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- CARD 2 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintStart_toStartOf="@id/card1"
+        app:layout_constraintTop_toBottomOf="@id/card1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#FFD3E7"
+                android:padding="6dp"
+                android:src="@drawable/ic_number"
+                app:tint="#FF1493"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menulis Angka"
+                    android:textColor="#FF1493"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belajar angka dari 0"
+                    android:textColor="#FF1493"
+                    android:textSize="10sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_arrow"
+                app:tint="#FF1493"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- CARD 3 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card3"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintStart_toStartOf="@id/card1"
+        app:layout_constraintTop_toBottomOf="@id/card2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#D7F0E7"
+                android:padding="6dp"
+                android:src="@drawable/ic_copy"
+                app:tint="#11845B"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menyalin Kata"
+                    android:textColor="#11845B"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belajar menyalin kata"
+                    android:textColor="#11845B"
+                    android:textSize="10sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_arrow"
+                app:tint="#11845B"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- CARD 4 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card4"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintStart_toStartOf="@id/card1"
+        app:layout_constraintTop_toBottomOf="@id/card3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#E0E5FF"
+                android:padding="6dp"
+                android:src="@drawable/ic_abc"
+                app:tint="#1A237E"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menyusun Huruf"
+                    android:textColor="#1A237E"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belajar menyusun kata"
+                    android:textColor="#1A237E"
+                    android:textSize="10sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_arrow"
+                app:tint="#1A237E"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- LOGO -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginEnd="40dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_calistalk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.5"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
