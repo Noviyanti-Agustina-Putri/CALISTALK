@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Primary Colors -->
+    <color name="primary">#59B292</color>
+    <color name="primary_dark">#4A8A6F</color>
+    <color name="primary_light">#7DC4A8</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary">#FFC94D</color>
+    <color name="secondary_dark">#E5B43C</color>
+
+    <!-- Background -->
     <color name="background">#FAE7CB</color>
+    <color name="surface">#FFFFFF</color>
+
+    <!-- Accent -->
+    <color name="accent_warning">#FA6781</color>
+    <color name="accent_warning_dark">#E5506A</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#4A3728</color>
+    <color name="text_secondary">#9E8B76</color>
+    <color name="text_light">#FFFFFF</color>
+
+    <!-- Status Bar -->
+    <color name="status_bar">#59B292</color>
 </resources>

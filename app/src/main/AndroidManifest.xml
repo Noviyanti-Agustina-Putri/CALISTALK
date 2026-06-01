@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.calistalk">
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ikon_apk"
@@ -7,23 +9,71 @@
         android:roundIcon="@mipmap/ikon_apk"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".RegisterActivity"
-            android:screenOrientation="landscape"/>
+
+        <!-- SplashActivity (LAUNCHER) -->
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashScreenStyle"
             android:exported="true"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
+            android:theme="@style/SplashScreenStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- LoginActivity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <!-- RegisterActivity -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="landscape" />
+
+        <!-- PilihanPenggunaActivity -->
+        <activity
+            android:name=".PilihanPenggunaActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <!-- VerifikasiOrangTuaActivity -->
+        <activity
+            android:name=".VerifikasiOrangTuaActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".JurnalOrtuActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".DetailJurnalActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PengaturanActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".StoryTellingActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".BacaCeritaActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
     </application>
+
 </manifest>
