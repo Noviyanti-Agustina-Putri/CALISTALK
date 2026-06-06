@@ -8,7 +8,6 @@
     android:background="#E9D8BE"
     tools:context=".MainActivity">
 
-    <!-- SIDEBAR -->
     <LinearLayout
         android:id="@+id/sidebar"
         android:layout_width="78dp"
@@ -171,6 +170,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"
@@ -215,6 +215,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"
@@ -259,6 +260,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card3"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"
@@ -303,6 +305,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card4"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"
@@ -347,6 +350,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card5"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"
@@ -391,6 +395,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card6"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"
@@ -435,6 +440,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card7"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"
@@ -479,6 +485,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card8"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"
@@ -523,6 +530,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card9"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"
@@ -567,6 +575,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card10"
                 android:layout_width="108dp"
                 android:layout_height="108dp"
                 app:cardCornerRadius="24dp"

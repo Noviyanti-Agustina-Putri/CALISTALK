@@ -74,6 +74,31 @@
             android:exported="false"
             android:screenOrientation="landscape" />
 
+        <activity
+            android:name=".HalamanAwalAnakActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".BelajarMenghitungActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+
+        <activity
+            android:name=".BelajarMenulisActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+
+        <activity
+            android:name=".MengenalAngkaActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".MenghitungBendaActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
     </application>
 
 </manifest>

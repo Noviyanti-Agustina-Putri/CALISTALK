@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.Toast
+import kotlin.jvm.java
 import androidx.appcompat.app.AppCompatActivity
 
 class PilihanPenggunaActivity : AppCompatActivity() {
@@ -18,11 +19,10 @@ class PilihanPenggunaActivity : AppCompatActivity() {
         cardAnak = findViewById(R.id.cardAnak)
         cardOrangTua = findViewById(R.id.cardOrangTua)
 
-        // Klik card anak
         cardAnak.setOnClickListener {
-            Toast.makeText(this, "Mode Anak Aktif", Toast.LENGTH_SHORT).show()
-            // Lanjut ke halaman anak
-            // startActivity(Intent(this, AnakDashboardActivity::class.java))
+            startActivity(
+                Intent(this, HalamanAwalAnakActivity::class.java)
+            )
         }
 
         // Klik card orang tua - BUKA VERIFIKASI
