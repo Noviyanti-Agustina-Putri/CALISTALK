@@ -120,6 +120,38 @@
             android:name=".TebakGambarActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".TracingHurufActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".PercobaanHurufActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".TracingAngkaActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+
+        <activity
+            android:name=".PercobaanAngkaActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+
+        <activity
+            android:name=".MenyalinKataActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+
+        <activity
+            android:name=".MenyusunHurufActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+
+
     </application>
 
 </manifest>

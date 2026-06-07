@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFE1CC">
+
+    <!-- SIDEBAR -->
+    <LinearLayout
+        android:id="@+id/sidebar"
+        android:layout_width="78dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_sidebar"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- MENU 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_mic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belajar\nPengucapan"
+                android:textAlignment="center"
+                android:textColor="#555555"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <!-- MENU 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_headset" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belajar\nMendengar"
+                android:textAlignment="center"
+                android:textColor="#555555"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <!-- MENU 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_game" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mini Game\nBicara"
+                android:textAlignment="center"
+                android:textColor="#555555"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <!-- MENU AKTIF -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_edit"
+                app:tint="#58BE9D" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belajar\nMenulis"
+                android:textAlignment="center"
+                android:textColor="#58BE9D"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- MENU 5 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_calculate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belajar\nBerhitung"
+                android:textAlignment="center"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- SCROLLVIEW UNTUK KONTEN UTAMA -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/sidebar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- BACK BUTTON -->
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_circle_white"
+                android:src="@drawable/ic_back"
+                android:layout_gravity="start" />
+
+            <!-- SOAL -->
+            <TextView
+                android:id="@+id/txtSoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Susun kata APEL"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- TOMBOL HURUF -->
+            <LinearLayout
+                android:id="@+id/layoutHuruf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_margin="4dp"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_margin="4dp"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_margin="4dp"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn4"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_margin="4dp"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <!-- JAWABAN SEMENTARA -->
+            <TextView
+                android:id="@+id/txtJawaban"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="_ _ _ _"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <!-- TOMBOL AKSI -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnCek"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="CEK" />
+
+                <Button
+                    android:id="@+id/btnHapus"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="HAPUS" />
+
+                <Button
+                    android:id="@+id/btnAcak"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="ACAK" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
