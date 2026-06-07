@@ -23,8 +23,8 @@ class TebakGambarActivity : AppCompatActivity() {
     private lateinit var assetsHelper: AssetsHelper
 
     private val daftarSoal = listOf(
-        SoalTebakGambar("benda", "apel", "Sepatu", "Apel", "Gajah", "Sepeda", "Apel"),
-        SoalTebakGambar("benda", "pisang", "Pisang", "Jeruk", "Strawberry", "Mangga", "Pisang"),
+        SoalTebakGambar("buah", "apel", "Sepatu", "Apel", "Gajah", "Sepeda", "Apel"),
+        SoalTebakGambar("buah", "pisang", "Pisang", "Jeruk", "Strawberry", "Mangga", "Pisang"),
         SoalTebakGambar("hewan", "kucing", "Kambing", "Sapi", "Kucing", "Singa", "Kucing"),
         SoalTebakGambar("hewan", "kambing", "Kambing", "Kelinci", "Kucing", "Kuda", "Kambing")
     )
