@@ -16,6 +16,7 @@ class PilihanPenggunaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pilihan_pengguna)
 
+
         cardAnak = findViewById(R.id.cardAnak)
         cardOrangTua = findViewById(R.id.cardOrangTua)
 

@@ -187,7 +187,7 @@
         app:layout_constraintTop_toBottomOf="@id/title"/>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/hitungDasar"
+        android:id="@+id/bendaBelajar"
         android:layout_width="230dp"
         android:layout_height="280dp"
         android:layout_marginTop="25dp"
@@ -235,14 +235,14 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/hitungLanjutan"
+        android:id="@+id/bendaPercobaan"
         android:layout_width="230dp"
         android:layout_height="280dp"
         android:layout_marginStart="20dp"
         app:cardCornerRadius="18dp"
         app:cardElevation="4dp"
-        app:layout_constraintStart_toEndOf="@id/hitungDasar"
-        app:layout_constraintTop_toTopOf="@id/hitungDasar">
+        app:layout_constraintStart_toEndOf="@id/bendaBelajar"
+        app:layout_constraintTop_toTopOf="@id/bendaBelajar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -281,14 +281,14 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/hitungSulit"
+        android:id="@+id/bendaKuis"
         android:layout_width="230dp"
         android:layout_height="280dp"
         android:layout_marginStart="20dp"
         app:cardCornerRadius="18dp"
         app:cardElevation="4dp"
-        app:layout_constraintStart_toEndOf="@id/hitungLanjutan"
-        app:layout_constraintTop_toTopOf="@id/hitungLanjutan">
+        app:layout_constraintStart_toEndOf="@id/bendaPercobaan"
+        app:layout_constraintTop_toTopOf="@id/bendaPercobaan">
 
         <LinearLayout
             android:layout_width="match_parent"
