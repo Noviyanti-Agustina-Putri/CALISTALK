@@ -81,6 +81,33 @@
             android:name=".MenghitungBendaActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".PilihanLevelActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".PilihanBendaActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".BelajarBendaActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".PenjumlahanActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".PenguranganActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+
+
         <activity
             android:name=".MiniGameBicaraActivity"
             android:exported="false"

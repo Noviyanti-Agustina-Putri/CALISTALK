@@ -256,7 +256,7 @@
                 <!-- INNER CARD -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="500dp"
-                    android:layout_height="250dp"
+                    android:layout_height="230dp"
                     app:cardCornerRadius="20dp"
                     app:cardBackgroundColor="#F4DED2"
                     app:cardElevation="3dp">
@@ -265,33 +265,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <!-- STRAWBERRY 1 -->
-                        <ImageView
+                        <GridLayout
                             android:id="@+id/containerBuah"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="20dp"
-                            android:src="@drawable/strawberry"/>
-
-                        <!-- STRAWBERRY 2 -->
-                        <ImageView
-                            android:id="@+id/containerBuah"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="30dp"
-                            android:layout_marginTop="20dp"
-                            android:src="@drawable/strawberry"/>
-
-                        <!-- STRAWBERRY 3 -->
-                        <ImageView
-                            android:id="@+id/containerBuah"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="90dp"
-                            android:src="@drawable/strawberry"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="5"
+                            android:useDefaultMargins="true"/>
 
                     </RelativeLayout>
 

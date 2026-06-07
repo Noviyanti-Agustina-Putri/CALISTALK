@@ -9,25 +9,40 @@ class BelajarMenghitungActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.halaman_awal_mengenal_angka)
 
-        findViewById<CardView>(R.id.hitungDasar).setOnClickListener {
-            val intent = Intent(this, MengenalAngkaActivity::class.java)
-            intent.putExtra("LEVEL", "DASAR")
-            startActivity(intent)
+        setContentView(R.layout.belajar_menghitung)
+
+        val cardAngka = findViewById<CardView>(R.id.card1)
+        val cardBenda = findViewById<CardView>(R.id.card2)
+        val cardPenjumlahan = findViewById<CardView>(R.id.card3)
+        val cardPengurangan = findViewById<CardView>(R.id.card4)
+
+        // Mengenal Angka
+        cardAngka.setOnClickListener {
+            startActivity(
+                Intent(this, PilihanLevelActivity::class.java)
+            )
         }
 
-        findViewById<CardView>(R.id.hitungLanjutan).setOnClickListener {
-            val intent = Intent(this, MengenalAngkaActivity::class.java)
-            intent.putExtra("LEVEL", "LANJUTAN")
-            startActivity(intent)
+        // Menghitung Benda
+        cardBenda.setOnClickListener {
+            startActivity(
+                Intent(this, PilihanBendaActivity::class.java)
+            )
         }
 
-        findViewById<CardView>(R.id.hitungSulit).setOnClickListener {
-            val intent = Intent(this, MengenalAngkaActivity::class.java)
-            intent.putExtra("LEVEL", "SULIT")
-            startActivity(intent)
+        // Penjumlahan
+        cardPenjumlahan.setOnClickListener {
+            startActivity(
+                Intent(this, PenjumlahanActivity::class.java)
+            )
+        }
 
+        // Pengurangan
+        cardPengurangan.setOnClickListener {
+            startActivity(
+                Intent(this, PenguranganActivity::class.java)
+            )
         }
     }
 }

@@ -3,6 +3,7 @@ package com.example.calistalk
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class MengenalAngkaActivity : AppCompatActivity() {
@@ -20,6 +21,10 @@ class MengenalAngkaActivity : AppCompatActivity() {
             "SULIT" -> setContentView(R.layout.mengenal_angka_sulit)
             else -> setContentView(R.layout.mengenal_angka_dasar)
         }
+        findViewById<ImageView>(R.id.btnBack)
+            .setOnClickListener {
+                finish()
+            }
 
         val angkaMap = when (level) {
 
@@ -66,20 +71,31 @@ class MengenalAngkaActivity : AppCompatActivity() {
         }
 
         angkaMap.forEach { (cardId, soundId) ->
+
             findViewById<View>(cardId)?.setOnClickListener {
+
                 playSound(soundId)
             }
         }
     }
 
     private fun playSound(soundId: Int) {
+
         mediaPlayer?.release()
-        mediaPlayer = MediaPlayer.create(this, soundId)
+
+        mediaPlayer = MediaPlayer.create(
+            this,
+            soundId
+        )
+
         mediaPlayer?.start()
     }
 
     override fun onDestroy() {
+
         mediaPlayer?.release()
+        mediaPlayer = null
+
         super.onDestroy()
     }
 }
