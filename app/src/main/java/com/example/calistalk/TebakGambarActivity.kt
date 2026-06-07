@@ -2,9 +2,10 @@ package com.example.calistalk
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -16,15 +17,16 @@ class TebakGambarActivity : AppCompatActivity() {
     private lateinit var btnOpsiC: Button
     private lateinit var btnOpsiD: Button
     private lateinit var btnBack: ImageView
-
+    private lateinit var headerTitle: TextView
+    private lateinit var headerSubtitle: TextView
+    private lateinit var headerIcon: ImageView
     private lateinit var assetsHelper: AssetsHelper
 
     private val daftarSoal = listOf(
-        // Perhatikan parameter pertama disesuaikan dengan properti "folderAssets" di model datamu
-        SoalTebakGambar("drawable", "apel", "Sepatu", "Apel", "Gajah", "Sepeda", "Apel"),
-        SoalTebakGambar("drawable", "pisang", "Pisang", "Jeruk", "Strawberry", "Mangga", "Pisang"),
-        SoalTebakGambar("drawable", "kucing", "Kambing", "Sapi", "Kucing", "Singa", "Kucinf"),
-        SoalTebakGambar("drawable", "kambing", "Kambing", "Kelinci", "Kucing", "Kuda", "Kambing")
+        SoalTebakGambar("buah", "apel", "Sepatu", "Apel", "Gajah", "Sepeda", "Apel"),
+        SoalTebakGambar("buah", "pisang", "Pisang", "Jeruk", "Strawberry", "Mangga", "Pisang"),
+        SoalTebakGambar("hewan", "kucing", "Kambing", "Sapi", "Kucing", "Singa", "Kucing"),
+        SoalTebakGambar("hewan", "kambing", "Kambing", "Kelinci", "Kucing", "Kuda", "Kambing")
     )
 
     private var indexSoalAktif = 0
@@ -34,97 +36,73 @@ class TebakGambarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tebak_gambar)
 
         assetsHelper = AssetsHelper(this)
+        initUI()
+        setupHeader()
+        setupListeners()
+        tampilkanSoal()
+    }
 
-        // Inisialisasi komponen UI
+    private fun initUI() {
         imgSoal = findViewById(R.id.img_soal)
         btnOpsiA = findViewById(R.id.btn_opsi_a)
         btnOpsiB = findViewById(R.id.btn_opsi_b)
         btnOpsiC = findViewById(R.id.btn_opsi_c)
         btnOpsiD = findViewById(R.id.btn_opsi_d)
+
+        // Cari langsung di root layout
         btnBack = findViewById(R.id.btnBackGame)
+        headerTitle = findViewById(R.id.title)
+        headerSubtitle = findViewById(R.id.subtitle)
+        headerIcon = findViewById(R.id.headerIcon)
+    }
 
+    private fun setupHeader() {
+        headerTitle.text = "Tebak Gambar"
+        headerSubtitle.text = "Lihat gambar dan tebak namanya"
+        headerIcon.setImageResource(R.drawable.ic_image)
+    }
+
+    private fun setupListeners() {
         btnBack.setOnClickListener { finish() }
-
-        tampilkanSoal()
-
-        // Set listener klik untuk mendeteksi pilihan jawaban dari anak
-        btnOpsiA.setOnClickListener { periksaJawaban(btnOpsiA.text.toString()) }
-        btnOpsiB.setOnClickListener { periksaJawaban(btnOpsiB.text.toString()) }
-        btnOpsiC.setOnClickListener { periksaJawaban(btnOpsiC.text.toString()) }
-        btnOpsiD.setOnClickListener { periksaJawaban(btnOpsiD.text.toString()) }
+        val buttons = listOf(btnOpsiA, btnOpsiB, btnOpsiC, btnOpsiD)
+        buttons.forEach { btn -> btn.setOnClickListener { cekJawaban(btn) } }
     }
 
     private fun tampilkanSoal() {
         if (indexSoalAktif < daftarSoal.size) {
             val soal = daftarSoal[indexSoalAktif]
-
-            // Memanggil properti "FileGambar" (F kapital) sesuai dengan isi file SoalTebakGambar.kt kamu
-            val resId = resources.getIdentifier(soal.FileGambar, "drawable", packageName)
-
-            if (resId != 0) {
-                // Jika file gambar ditemukan di drawable, langsung pasang
-                imgSoal.setImageResource(resId)
-            } else {
-                // Gambar cadangan kalau nama file di daftarSoal gak pas sama yang di drawable
-                imgSoal.setImageResource(R.drawable.ic_game)
-            }
+            assetsHelper.loadKuisImage(soal.folderGambar, soal.namaGambar, imgSoal)
             btnOpsiA.text = soal.opsiA
             btnOpsiB.text = soal.opsiB
             btnOpsiC.text = soal.opsiC
             btnOpsiD.text = soal.opsiD
         } else {
-            Toast.makeText(this, "Hebat! Semua game berhasil diselesaikan!", Toast.LENGTH_SHORT).show()
-            finish()
+            tampilkanSelesai()
         }
     }
 
-    private fun periksaJawaban(jawabanDipilih: String) {
-        val soalSekarang = daftarSoal[indexSoalAktif]
-
-        if (jawabanDipilih == soalSekarang.jawabanBenar) {
-            tampilkanPopUpBenar()
+    private fun cekJawaban(btn: Button) {
+        val jawabanBenar = daftarSoal[indexSoalAktif].jawabanBenar
+        if (btn.text.toString().equals(jawabanBenar, ignoreCase = true)) {
+            tampilkanDialogGambar(R.drawable.benar) {
+                indexSoalAktif++
+                tampilkanSoal()
+            }
         } else {
-            tampilkanPopUpSalah()
+            tampilkanDialogGambar(R.drawable.salah) { }
         }
     }
 
-    private fun tampilkanPopUpBenar() {
-        val imageView = ImageView(this)
-        imageView.setImageResource(R.drawable.benar)
-        imageView.adjustViewBounds = true
-
-        val dialog = AlertDialog.Builder(this)
-            .setView(imageView)
-            .setCancelable(false)
-            .create()
-
-        // Menghilangkan background bawaan dialog biar pojokan bulat dari gambar kelihatan rapi
+    private fun tampilkanDialogGambar(resId: Int, onEnd: () -> Unit) {
+        val img = ImageView(this).apply { setImageResource(resId) }
+        val dialog = AlertDialog.Builder(this).setView(img).setCancelable(false).create()
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.show()
-
-        // Otomatis hilang setelah 2 detik, lalu index nambah dan soal di-update
-        imageView.postDelayed({
-            dialog.dismiss()
-            indexSoalAktif++
-            tampilkanSoal()
-        }, 2000)
+        img.postDelayed({ dialog.dismiss(); onEnd() }, 1500)
     }
 
-    private fun tampilkanPopUpSalah() {
-        val imageView = ImageView(this)
-        imageView.setImageResource(R.drawable.salah)
-        imageView.adjustViewBounds = true
-
-        val dialog = AlertDialog.Builder(this)
-            .setView(imageView)
-            .create()
-
-        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-        dialog.show()
-
-        // Otomatis hilang setelah 1.5 detik biar anak bisa nyoba lagi
-        imageView.postDelayed({
-            dialog.dismiss()
-        }, 1500)
+    private fun tampilkanSelesai() {
+        Toast.makeText(this, "Selesai!", Toast.LENGTH_SHORT).show()
+        finish()
     }
 }

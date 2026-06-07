@@ -115,9 +115,13 @@
         <activity
             android:name=".CocokkanSuaraActivity"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".TebakGambarActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PilihBendaActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
 
