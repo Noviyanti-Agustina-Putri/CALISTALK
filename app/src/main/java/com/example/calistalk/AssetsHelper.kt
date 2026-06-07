@@ -1,78 +1,93 @@
 package com.example.calistalk
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.widget.ImageView
 import java.io.IOException
 
 class AssetsHelper(private val context: Context) {
 
-    // Membaca gambar cover (awal.png) dari folder story/ceritaX/
-    fun loadCoverImage(ceritaFolder: String, imageView: ImageView) {
-        try {
-            // Path: story/cerita1/awal.png
-            val inputStream = context.assets.open("story/$ceritaFolder/awal.png")
-            val bitmap = BitmapFactory.decodeStream(inputStream)
-            imageView.setImageBitmap(bitmap)
+    private fun tryLoadImage(path: String, imageView: ImageView, defaultRes: Int = R.drawable.ic_book): Boolean {
+        return try {
+            context.assets.open(path).use { inputStream ->
+                val bitmap = BitmapFactory.decodeStream(inputStream)
+                if (bitmap != null) {
+                    imageView.setImageBitmap(bitmap)
+                    true
+                } else {
+                    imageView.setImageResource(defaultRes)
+                    false
+                }
+            }
         } catch (e: IOException) {
             e.printStackTrace()
-            // Jika awal.png tidak ada, coba 1.png
-            try {
-                val inputStream = context.assets.open("story/$ceritaFolder/1.png")
-                val bitmap = BitmapFactory.decodeStream(inputStream)
-                imageView.setImageBitmap(bitmap)
-            } catch (e2: IOException) {
-                imageView.setImageResource(R.drawable.ic_book)
-            }
+            imageView.setImageResource(defaultRes)
+            false
         }
     }
 
-    // Mendapatkan jumlah halaman cerita (file .png selain awal.png)
-    fun getJumlahHalaman(ceritaFolder: String): Int {
-        return getDaftarHalaman(ceritaFolder).size
+    // --- LOGIKA CERITA ---
+    fun loadCoverImage(ceritaFolder: String, imageView: ImageView) {
+        val success = tryLoadImage("story/$ceritaFolder/awal.png", imageView)
+        if (!success) {
+            val successSecond = tryLoadImage("story/$ceritaFolder/1.png", imageView)
+            if (!successSecond) imageView.setImageResource(R.drawable.ic_book)
+        }
     }
 
-    // Mendapatkan daftar nama file halaman (exclude awal.png)
+    fun getJumlahHalaman(ceritaFolder: String): Int = getDaftarHalaman(ceritaFolder).size
+
     fun getDaftarHalaman(ceritaFolder: String): List<String> {
         val halamanList = mutableListOf<String>()
         try {
-            val list = context.assets.list("story/$ceritaFolder")
-            list?.forEach { fileName ->
+            val files = context.assets.list("story/$ceritaFolder")
+            files?.forEach { fileName ->
                 if (fileName.endsWith(".png") && fileName != "awal.png") {
                     halamanList.add(fileName)
                 }
             }
-            // Urutkan berdasarkan nomor (1.png, 2.png, dst)
-            halamanList.sortBy {
-                it.replace(".png", "").toIntOrNull() ?: 0
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
+            halamanList.sortWith(compareBy { it.removeSuffix(".png").toIntOrNull() ?: Int.MAX_VALUE })
+        } catch (e: IOException) { e.printStackTrace() }
         return halamanList
     }
 
-    // Membaca gambar halaman tertentu
     fun loadHalamanImage(ceritaFolder: String, fileName: String, imageView: ImageView) {
+        tryLoadImage("story/$ceritaFolder/$fileName", imageView)
+    }
+
+    fun loadKuisImage(folderName: String, fileName: String, imageView: ImageView?) {
+        // 1. Cek apakah imageView null. Jika ya, hentikan fungsi agar tidak crash
+        if (imageView == null) {
+            android.util.Log.e("DEBUG_GAMBAR", "ImageView null, membatalkan loading.")
+            return
+        }
+
+        val cleanFileName = if (fileName.endsWith(".png")) fileName else "$fileName.png"
+        val path = if (folderName == "hewan") "hewan/gambar/$cleanFileName" else "$folderName/$cleanFileName"
+
         try {
-            val inputStream = context.assets.open("story/$ceritaFolder/$fileName")
-            val bitmap = BitmapFactory.decodeStream(inputStream)
-            imageView.setImageBitmap(bitmap)
-        } catch (e: IOException) {
-            e.printStackTrace()
-            imageView.setImageResource(R.drawable.ic_book)
+            context.assets.open(path).use { stream ->
+                val bitmap = android.graphics.BitmapFactory.decodeStream(stream)
+                if (bitmap != null) {
+                    imageView.setImageBitmap(bitmap)
+                } else {
+                    imageView.setImageResource(R.drawable.ic_game)
+                }
+            }
+        } catch (e: Exception) {
+            android.util.Log.e("DEBUG_GAMBAR", "Gagal cari: $path", e)
+            imageView.setImageResource(R.drawable.ic_game)
         }
     }
-    fun loadKuisImage(folderName: String, fileName: String, imageView: ImageView) {
-        try {
-            val inputStream = context.assets.open("$folderName/$fileName")
-            val bitmap = BitmapFactory.decodeStream(inputStream)
-            imageView.setImageBitmap(bitmap)
+
+    // Mendapatkan daftar semua gambar dari folder tertentu (misal: "hewan/gambar")
+    fun getDaftarGambarKuis(folderName: String): List<String> {
+        val path = if (folderName == "hewan") "hewan/gambar" else folderName
+        return try {
+            context.assets.list(path)?.filter { it.endsWith(".png") } ?: emptyList()
         } catch (e: IOException) {
             e.printStackTrace()
-            // Jika gambar tidak ditemukan, beri gambar default (misal ic_game atau logo)
-            imageView.setImageResource(R.drawable.ic_game)
+            emptyList()
         }
     }
 }

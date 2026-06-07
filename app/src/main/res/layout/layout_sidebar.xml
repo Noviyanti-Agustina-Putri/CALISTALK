@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sidebar"
+    android:layout_width="80dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp"
+    android:background="@drawable/bg_sidebar"
+    android:elevation="8dp">
+
+    <LinearLayout
+        android:id="@+id/menu1"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp" android:orientation="vertical" android:gravity="center"
+        android:foreground="?attr/selectableItemBackground">
+        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_mic" app:tint="#000000"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Belajar\nPengucapan" android:textAlignment="center"
+            android:textColor="#666666" android:textSize="9sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu2"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp" android:orientation="vertical" android:gravity="center"
+        android:foreground="?attr/selectableItemBackground">
+        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_headset" app:tint="#000000"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Belajar\nMendengar" android:textAlignment="center"
+            android:textColor="#666666" android:textSize="9sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu3"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp" android:orientation="vertical" android:gravity="center">
+        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_game" app:tint="#58BE9D"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Mini Game\nBicara" android:textAlignment="center"
+            android:textColor="#58BE9D" android:textStyle="bold" android:textSize="9sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu4"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp" android:orientation="vertical" android:gravity="center"
+        android:foreground="?attr/selectableItemBackground">
+        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_edit" app:tint="#000000"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Belajar\nMenulis" android:textAlignment="center"
+            android:textColor="#666666" android:textSize="9sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu5"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:orientation="vertical" android:gravity="center"
+        android:foreground="?attr/selectableItemBackground">
+        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_calculate" app:tint="#000000"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Belajar\nBerhitung" android:textAlignment="center"
+            android:textColor="#666666" android:textStyle="normal" android:textSize="9sp"/>
+    </LinearLayout>
+
+</LinearLayout>

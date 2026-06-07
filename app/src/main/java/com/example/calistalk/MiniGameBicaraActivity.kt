@@ -3,43 +3,82 @@ package com.example.calistalk
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 
 class MiniGameBicaraActivity : AppCompatActivity() {
+
+    // --- 1. Deklarasi View ---
+    private lateinit var btnBack: ImageView
+
+    // List Card Menu
+    private lateinit var card1: CardView
+    private lateinit var card2: CardView
+    private lateinit var card3: CardView
+
+    // View Header
+    private lateinit var headerTitle: TextView
+    private lateinit var headerSubtitle: TextView
+    private lateinit var headerIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mini_game)
 
-        val btnBack = findViewById<ImageView>(R.id.btnBack)
-        val card1 = findViewById<CardView>(R.id.card1)
-        val card2 = findViewById<CardView>(R.id.card2)
-        val card3 = findViewById<CardView>(R.id.card3)
+        initUI()
+        setupHeader()
+        setupListeners()
+    }
 
-        // Fungsi Klik untuk Tombol Kembali
-        btnBack.setOnClickListener {
-            finish()
-        }
+    private fun initUI() {
+        // Header (Diambil via layout include)
+        btnBack = findViewById(R.id.btnBackGame)
+        headerTitle = findViewById(R.id.title)
+        headerSubtitle = findViewById(R.id.subtitle)
+        headerIcon = findViewById(R.id.headerIcon)
 
-        // Fungsi Klik untuk Menu Game 1: Tebak Gambar
-        // 3. Fungsi Klik untuk Menu Game 1: Tebak Gambar
-        card1.setOnClickListener {
-            val intent = Intent(this, TebakGambarActivity::class.java)
-            startActivity(intent)
-        }
+        // Menu Cards
+        card1 = findViewById(R.id.card1)
+        card2 = findViewById(R.id.card2)
+        card3 = findViewById(R.id.card3)
+    }
 
-        // Fungsi Klik untuk Menu Game 2: Cocokkan Suara
-        card2.setOnClickListener {
-            val intent = Intent(this, CocokkanSuaraActivity::class.java)
-            startActivity(intent)
-        }
+    private fun setupHeader() {
+        // Mengubah warna dan teks sesuai screenshot
+        headerTitle.text = "Mini Game Bicara"
+        headerSubtitle.text = "Main game untuk melatih kemampuan bicara"
+        headerIcon.setImageResource(R.drawable.ic_game)
 
-        // Fungsi Klik untuk Menu Game 3: Pilih Benda
-        card3.setOnClickListener {
-            // Catatan: Hapus tanda komentar (//) di bawah jika Activity tujuan sudah dibuat
-            // val intent = Intent(this, PilihBendaActivity::class.java)
-            // startActivity(intent)
+        val colorGreen = ContextCompat.getColor(this, android.R.color.holo_green_dark)
+
+        headerTitle.setTextColor(colorGreen)
+        headerSubtitle.setTextColor(colorGreen)
+    }
+
+    private fun setupListeners() {
+        btnBack.setOnClickListener { finish() }
+
+        // Pair (Card -> Activity)
+        val menuList = listOf(
+            Pair(card1, TebakGambarActivity::class.java),
+            Pair(card2, CocokkanSuaraActivity::class.java),
+            Pair(card3, PilihBendaActivity::class.java)
+        )
+
+        // Terapkan listener ke masing-masing card secara langsung
+        menuList.forEach { (card, activityClass) ->
+            card.setOnClickListener {
+                // Efek visual
+                card.animate().scaleX(0.95f).scaleY(0.95f).setDuration(100).withEndAction {
+                    card.animate().scaleX(1f).scaleY(1f).setDuration(100).start()
+
+                    // Pindah Activity
+                    val intent = Intent(this, activityClass)
+                    startActivity(intent)
+                }.start()
+            }
         }
     }
 }
