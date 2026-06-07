@@ -9,8 +9,6 @@
         android:roundIcon="@mipmap/ikon_apk"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!-- SplashActivity (LAUNCHER) -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -18,35 +16,26 @@
             android:theme="@style/SplashScreenStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- LoginActivity -->
         <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
-
-        <!-- RegisterActivity -->
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
-
-        <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
-
-        <!-- PilihanPenggunaActivity -->
         <activity
             android:name=".PilihanPenggunaActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
-
-        <!-- VerifikasiOrangTuaActivity -->
         <activity
             android:name=".VerifikasiOrangTuaActivity"
             android:exported="false"
@@ -68,32 +57,26 @@
             android:name=".StoryTellingActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".BacaCeritaActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".HalamanAwalAnakActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".BelajarMenghitungActivity"
             android:exported="false"
-            android:screenOrientation="landscape"/>
-
+            android:screenOrientation="landscape" />
         <activity
             android:name=".BelajarMenulisActivity"
             android:exported="false"
-            android:screenOrientation="landscape"/>
-
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MengenalAngkaActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".MenghitungBendaActivity"
             android:exported="false"
@@ -125,6 +108,18 @@
             android:screenOrientation="landscape" />
 
 
+        <activity
+            android:name=".MiniGameBicaraActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".CocokkanSuaraActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".TebakGambarActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
