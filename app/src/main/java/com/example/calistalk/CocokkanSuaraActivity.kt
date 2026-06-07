@@ -33,7 +33,7 @@ class CocokkanSuaraActivity : AppCompatActivity() {
     // Pastikan file gambar ada di assets/hewan/kucing.png
     private val daftarSoal = listOf(
         SoalCocokkanSuara(
-            "kucing", "hewan", // Suara dari raw, Gambar dari folder assets/hewan
+            "cat", "hewan",
             listOf(
                 OpsiGambar("kucing", "Kucing"),
                 OpsiGambar("monyet", "Monyet"),
