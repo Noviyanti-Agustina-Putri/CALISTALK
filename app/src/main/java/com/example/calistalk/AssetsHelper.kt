@@ -64,4 +64,15 @@ class AssetsHelper(private val context: Context) {
             imageView.setImageResource(R.drawable.ic_book)
         }
     }
+    fun loadKuisImage(folderName: String, fileName: String, imageView: ImageView) {
+        try {
+            val inputStream = context.assets.open("$folderName/$fileName")
+            val bitmap = BitmapFactory.decodeStream(inputStream)
+            imageView.setImageBitmap(bitmap)
+        } catch (e: IOException) {
+            e.printStackTrace()
+            // Jika gambar tidak ditemukan, beri gambar default (misal ic_game atau logo)
+            imageView.setImageResource(R.drawable.ic_game)
+        }
+    }
 }
