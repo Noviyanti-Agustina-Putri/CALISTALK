@@ -60,9 +60,6 @@ class AssetsHelper(private val context: Context) {
 
         val cleanFileName = if (fileName.endsWith(".png")) fileName else "$fileName.png"
 
-        // Coba dua skenario path:
-        // 1. Jika ada folder 'gambar' di dalam 'hewan'
-        // 2. Jika langsung ada di dalam folder 'hewan'
         val paths = listOf(
             "$folderName/gambar/$cleanFileName",
             "$folderName/$cleanFileName"

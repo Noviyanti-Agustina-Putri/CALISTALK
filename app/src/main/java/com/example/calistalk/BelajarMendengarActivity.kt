@@ -24,15 +24,12 @@ class BelajarMendengarActivity : AppCompatActivity() {
         // 3. Navigasi ke Halaman Percobaan
         val cardPercobaan = findViewById<CardView>(R.id.cardPercobaan)
         cardPercobaan.setOnClickListener {
-            // Pastikan Activity 'BelajarMendengarkanActivity' sudah dibuat
             val intent = Intent(this, BelajarMendengarkanActivity::class.java)
             startActivity(intent)
         }
 
         // 4. Navigasi ke Halaman Kuis (Opsional)
-        val cardKuis = findViewById<CardView>(R.id.cardKuis)
-        cardKuis.setOnClickListener {
-            // Tambahkan logika kuis di sini
+
         }
     }
 }
