@@ -43,14 +43,14 @@ class CocokkanSuaraActivity : AppCompatActivity() {
             "Kucing"
         ),
         SoalCocokkanSuara(
-            "monyet", "hewan",
+            "lion", "hewan",
             listOf(
                 OpsiGambar("kucing", "Kucing"),
                 OpsiGambar("monyet", "Monyet"),
                 OpsiGambar("anjing", "Anjing"),
                 OpsiGambar("singa", "Singa")
             ),
-            "Monyet"
+            "Singa"
         ),
     )
 
