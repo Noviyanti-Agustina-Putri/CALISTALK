@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4E4CE">
+    android:background="#EFE1CC">
 
     <!-- SIDEBAR -->
     <LinearLayout
@@ -13,8 +13,8 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:gravity="center"
-        android:paddingTop="14dp"
-        android:paddingBottom="14dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:background="@drawable/bg_sidebar"
         android:elevation="8dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,95 +25,95 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:gravity="center">
 
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_mic"
-                app:tint="#000000"/>
-
+                android:tint="#9E9E9E" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Belajar\nPengucapan"
                 android:textAlignment="center"
-                android:textColor="#666666"
-                android:textSize="9sp"/>
+                android:textColor="#9E9E9E"
+                android:textSize="9sp"
+                android:lineSpacingExtra="2dp" />
         </LinearLayout>
 
         <!-- MENU 2 -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:gravity="center">
 
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_headset"
-                app:tint="#000000"/>
-
+                android:tint="#9E9E9E" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Belajar\nMendengar"
                 android:textAlignment="center"
-                android:textColor="#666666"
-                android:textSize="9sp"/>
+                android:textColor="#9E9E9E"
+                android:textSize="9sp"
+                android:lineSpacingExtra="2dp" />
         </LinearLayout>
 
         <!-- MENU 3 -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:gravity="center">
 
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_game"
-                app:tint="#000000"/>
-
+                android:tint="#9E9E9E" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mini Game\nBicara"
                 android:textAlignment="center"
-                android:textColor="#666666"
-                android:textSize="9sp"/>
+                android:textColor="#9E9E9E"
+                android:textSize="9sp"
+                android:lineSpacingExtra="2dp" />
         </LinearLayout>
 
         <!-- MENU 4 -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:gravity="center">
 
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_edit"
-                app:tint="#000000"/>
-
+                android:tint="#9E9E9E" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Belajar\nMenulis"
                 android:textAlignment="center"
-                android:textColor="#666666"
-                android:textSize="9sp"/>
+                android:textColor="#9E9E9E"
+                android:textSize="9sp"
+                android:lineSpacingExtra="2dp" />
         </LinearLayout>
 
-        <!-- ACTIVE -->
+        <!-- ACTIVE (Berhitung) -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -121,47 +121,47 @@
             android:gravity="center">
 
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_calculate"
-                app:tint="#58BE9D"/>
-
+                android:tint="#11845B" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Belajar\nBerhitung"
                 android:textAlignment="center"
-                android:textColor="#58BE9D"
+                android:textColor="#11845B"
                 android:textStyle="bold"
-                android:textSize="9sp"/>
+                android:textSize="10sp"
+                android:lineSpacingExtra="2dp" />
         </LinearLayout>
-
     </LinearLayout>
 
-    <!-- BACK -->
+    <!-- BACK BUTTON -->
     <ImageView
         android:id="@+id/btnBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/bg_circle_white"
-        android:padding="10dp"
+        android:padding="8dp"
         android:src="@drawable/ic_back"
-        app:tint="#58BE9D"
+        android:tint="#11845B"
         app:layout_constraintStart_toEndOf="@id/sidebar"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- ICON HEADER -->
+    <!-- HEADER ICON -->
     <ImageView
         android:id="@+id/headerIcon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="10dp"
         android:src="@drawable/ic_object"
-        app:tint="#4A7CC2"
+        android:tint="#11845B"
         app:layout_constraintStart_toEndOf="@id/btnBack"
-        app:layout_constraintTop_toTopOf="@id/btnBack"/>
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack" />
 
     <!-- TITLE -->
     <TextView
@@ -171,9 +171,10 @@
         android:text="Mengenal Benda"
         android:textColor="#11845B"
         android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="24sp"
+        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@id/headerIcon"
-        app:layout_constraintTop_toTopOf="@id/headerIcon"/>
+        app:layout_constraintTop_toTopOf="@id/headerIcon" />
 
     <!-- SUBTITLE -->
     <TextView
@@ -181,149 +182,167 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ayo kenali benda"
-        android:textColor="#11845B"
-        android:textSize="14sp"
+        android:textColor="#666666"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@id/title"
-        app:layout_constraintTop_toBottomOf="@id/title"/>
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
+    <!-- Guideline untuk membantu perataan tengah -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <!-- CARD 1: BELAJAR -->
     <androidx.cardview.widget.CardView
         android:id="@+id/bendaBelajar"
-        android:layout_width="230dp"
-        android:layout_height="280dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="4dp"
-        app:layout_constraintStart_toEndOf="@id/sidebar"
-        app:layout_constraintTop_toBottomOf="@id/headerIcon">
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toStartOf="@id/bendaPercobaan"
+        app:layout_constraintTop_toBottomOf="@id/subtitle">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
-            <!-- Area gambar -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="6dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="14dp"
                 app:cardElevation="0dp"
-                app:cardBackgroundColor="#C7D2E8">
+                app:cardBackgroundColor="#E8F5E9">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="12dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/belajar_hitung_belajar"/>
-
+                    android:src="@drawable/belajar_hitung_belajar" />
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="12dp"
                 android:text="Belajar"
-                android:textColor="#071B86"
+                android:textColor="#11845B"
                 android:textStyle="bold"
-                android:textSize="28sp"/>
-
+                android:textSize="24sp" />
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
+    <!-- CARD 2: PERCOBAAN -->
     <androidx.cardview.widget.CardView
         android:id="@+id/bendaPercobaan"
-        android:layout_width="230dp"
-        android:layout_height="280dp"
-        android:layout_marginStart="20dp"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="4dp"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@id/bendaBelajar"
+        app:layout_constraintEnd_toStartOf="@id/bendaKuis"
         app:layout_constraintTop_toTopOf="@id/bendaBelajar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="6dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="14dp"
                 app:cardElevation="0dp"
-                app:cardBackgroundColor="#C7D2E8">
+                app:cardBackgroundColor="#E3F2FD">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="12dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/belajar_hitung_percobaan"/>
-
+                    android:src="@drawable/belajar_hitung_percobaan" />
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="12dp"
                 android:text="Percobaan"
-                android:textColor="#071B86"
+                android:textColor="#11845B"
                 android:textStyle="bold"
-                android:textSize="28sp"/>
-
+                android:textSize="24sp" />
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
+    <!-- CARD 3: KUIS -->
     <androidx.cardview.widget.CardView
         android:id="@+id/bendaKuis"
-        android:layout_width="230dp"
-        android:layout_height="280dp"
-        android:layout_marginStart="20dp"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="4dp"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@id/bendaPercobaan"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
         app:layout_constraintTop_toTopOf="@id/bendaPercobaan">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="6dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="14dp"
                 app:cardElevation="0dp"
-                app:cardBackgroundColor="#C7D2E8">
+                app:cardBackgroundColor="#FFF3E0">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="12dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/belajar_hitung_kuis"/>
-
+                    android:src="@drawable/belajar_hitung_kuis" />
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="12dp"
                 android:text="Kuis"
-                android:textColor="#071B86"
+                android:textColor="#11845B"
                 android:textStyle="bold"
-                android:textSize="28sp"/>
-
+                android:textSize="24sp" />
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

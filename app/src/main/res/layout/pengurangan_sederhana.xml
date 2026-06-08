@@ -127,7 +127,7 @@
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Penjumlahan Sederhana"
+        android:text="Pengurangan Sederhana"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#FF1493"
@@ -137,7 +137,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Belajar menjumlah angka"
+        android:text="Belajar mengurangkan angka"
         android:textColor="#FF4081"
         app:layout_constraintStart_toStartOf="@id/txtTitle"
         app:layout_constraintTop_toBottomOf="@id/txtTitle"/>
