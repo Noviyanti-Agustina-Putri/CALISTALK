@@ -2,7 +2,6 @@ package com.example.calistalk
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -10,7 +9,7 @@ import androidx.cardview.widget.CardView
 class BelajarMendengarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_belajar_mendengar) // Pastikan nama layout benar
+        setContentView(R.layout.activity_belajar_mendengar)
 
         // 1. Tombol Kembali
         findViewById<ImageView>(R.id.btnBack).setOnClickListener { finish() }
@@ -22,13 +21,18 @@ class BelajarMendengarActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // 3. (Opsional) Tambahkan untuk cardPercobaan atau cardKuis jika sudah ada
-        // Di dalam onCreate() Activity menu utama Anda:
-
+        // 3. Navigasi ke Halaman Percobaan
         val cardPercobaan = findViewById<CardView>(R.id.cardPercobaan)
-        cardBelajar.setOnClickListener {
-            val intent = Intent(this, BelajarMendengarActivity::class.java)
+        cardPercobaan.setOnClickListener {
+            // Pastikan Activity 'BelajarMendengarkanActivity' sudah dibuat
+            val intent = Intent(this, BelajarMendengarkanActivity::class.java)
             startActivity(intent)
+        }
+
+        // 4. Navigasi ke Halaman Kuis (Opsional)
+        val cardKuis = findViewById<CardView>(R.id.cardKuis)
+        cardKuis.setOnClickListener {
+            // Tambahkan logika kuis di sini
         }
     }
 }

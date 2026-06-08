@@ -2,7 +2,6 @@ package com.example.calistalk
 
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -71,4 +70,3 @@ class BelajarMendengarkanActivity : AppCompatActivity() {
     }
 }
 
-// Data Class sederhana
