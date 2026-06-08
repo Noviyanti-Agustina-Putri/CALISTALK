@@ -56,38 +56,35 @@ class AssetsHelper(private val context: Context) {
     }
 
     fun loadKuisImage(folderName: String, fileName: String, imageView: ImageView?) {
-        // 1. Cek apakah imageView null. Jika ya, hentikan fungsi agar tidak crash
-        if (imageView == null) {
-            android.util.Log.e("DEBUG_GAMBAR", "ImageView null, membatalkan loading.")
-            return
-        }
+        if (imageView == null) return
 
         val cleanFileName = if (fileName.endsWith(".png")) fileName else "$fileName.png"
-        val path = if (folderName == "hewan") "hewan/gambar/$cleanFileName" else "$folderName/$cleanFileName"
 
-        try {
-            context.assets.open(path).use { stream ->
-                val bitmap = android.graphics.BitmapFactory.decodeStream(stream)
-                if (bitmap != null) {
+        // Coba dua skenario path:
+        // 1. Jika ada folder 'gambar' di dalam 'hewan'
+        // 2. Jika langsung ada di dalam folder 'hewan'
+        val paths = listOf(
+            "$folderName/gambar/$cleanFileName",
+            "$folderName/$cleanFileName"
+        )
+
+        var loaded = false
+        for (path in paths) {
+            try {
+                context.assets.open(path).use { stream ->
+                    val bitmap = BitmapFactory.decodeStream(stream)
                     imageView.setImageBitmap(bitmap)
-                } else {
-                    imageView.setImageResource(R.drawable.ic_game)
+                    loaded = true
+                    return // Berhasil, keluar dari fungsi
                 }
+            } catch (e: Exception) {
+                android.util.Log.d("DEBUG_GAMBAR", "Gagal di path: $path")
             }
-        } catch (e: Exception) {
-            android.util.Log.e("DEBUG_GAMBAR", "Gagal cari: $path", e)
-            imageView.setImageResource(R.drawable.ic_game)
         }
-    }
 
-    // Mendapatkan daftar semua gambar dari folder tertentu (misal: "hewan/gambar")
-    fun getDaftarGambarKuis(folderName: String): List<String> {
-        val path = if (folderName == "hewan") "hewan/gambar" else folderName
-        return try {
-            context.assets.list(path)?.filter { it.endsWith(".png") } ?: emptyList()
-        } catch (e: IOException) {
-            e.printStackTrace()
-            emptyList()
+        if (!loaded) {
+            android.util.Log.e("DEBUG_GAMBAR", "Gambar tidak ditemukan di semua path: $cleanFileName")
+            imageView.setImageResource(R.drawable.ic_game)
         }
     }
 }

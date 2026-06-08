@@ -17,6 +17,7 @@ class HalamanAwalAnakActivity : AppCompatActivity() {
         val cardMiniGameBicara = findViewById<CardView>(R.id.cardGame)
         val cardMendengar = findViewById<CardView>(R.id.cardMendengar)
         val cardPengucapan = findViewById<CardView>(R.id.cardPengucapan)
+        val menuMendengar = findViewById<CardView>(R.id.cardMendengar)
 
 
         cardMenghitung.setOnClickListener {
@@ -50,6 +51,11 @@ class HalamanAwalAnakActivity : AppCompatActivity() {
         cardPengucapan.setOnClickListener {
             startActivity(
                 Intent(this, BelajarPengucapanActivity::class.java)
+            )
+        }
+        menuMendengar.setOnClickListener {
+            startActivity(
+            Intent(this, BelajarMendengarActivity::class.java)
             )
         }
     }

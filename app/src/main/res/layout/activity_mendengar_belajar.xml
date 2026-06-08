@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDF5E6">
+
+    <include android:id="@+id/sidebar" layout="@layout/layout_sidebar" />
+
+    <ImageView android:id="@+id/btnBack" android:layout_width="40dp" android:layout_height="40dp" android:layout_margin="16dp" android:src="@drawable/ic_back" app:layout_constraintStart_toEndOf="@id/sidebar" app:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:id="@+id/headerIcon" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/bg_circle_white" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/btnBack" app:layout_constraintTop_toTopOf="@id/btnBack" app:layout_constraintBottom_toBottomOf="@id/btnBack"/>
+    <TextView android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Belajar" android:textSize="20sp" android:textStyle="bold" android:textColor="#2D5A27" app:layout_constraintStart_toEndOf="@id/headerIcon" app:layout_constraintTop_toTopOf="@id/headerIcon" />
+    <TextView android:id="@+id/tvSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Perbanyak ilmu, yuk !!!" android:textSize="14sp" android:textColor="#2D5A27" app:layout_constraintStart_toStartOf="@id/tvTitle" app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <ImageView
+        android:id="@+id/btnPrev"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_double_left"
+        android:padding="10dp"
+        android:elevation="5dp"
+        app:layout_constraintStart_toEndOf="@id/sidebar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnNext"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_double_right"
+        android:padding="10dp"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnPrev"
+        app:layout_constraintEnd_toStartOf="@id/btnNext">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#E0F7EF">
+            <TextView android:id="@+id/tvNamaMateri" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="gambar" android:textSize="28sp" android:textStyle="bold" android:textColor="#2D5A27" android:layout_marginBottom="10dp" />
+            <ImageView android:id="@+id/imgMateri" android:layout_width="200dp" android:layout_height="200dp" android:scaleType="fitCenter" />
+            <ImageButton android:id="@+id/btnPlaySuara" android:layout_width="200dp" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:padding="10dp" android:src="@drawable/ic_play_circle" android:background="@android:color/white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
