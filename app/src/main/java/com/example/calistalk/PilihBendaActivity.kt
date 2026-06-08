@@ -44,7 +44,7 @@ class PilihBendaActivity : AppCompatActivity() {
             "benda",
             listOf(
                 OpsiGambar("sapu", "Sapu"),
-                OpsiGambar("sandal", "Sandal"),
+                OpsiGambar("sendal", "Sandal"),
                 OpsiGambar("sendok", "Sendok"),
                 OpsiGambar("topi", "Topi")
             ),
@@ -81,16 +81,32 @@ class PilihBendaActivity : AppCompatActivity() {
     private fun initUI() {
         tvInstruksi = findViewById(R.id.tvInstruksi)
 
-        // Pastikan ID di bawah ini sama PERSIS dengan yang ada di activity_pilih_benda.xml
-        // Jika di XML id-nya img_a, maka di sini harus R.id.img_a
-        val images = listOf(R.id.img_a, R.id.img_b, R.id.img_c, R.id.img_d)
-        optionImages = images.map { findViewById<ImageView>(it) }
+        btnBack = findViewById(R.id.btnBackGame)
+        headerTitle = findViewById(R.id.title)
+        headerSubtitle = findViewById(R.id.subtitle)
+        headerIcon = findViewById(R.id.headerIcon)
 
-        val containers = listOf(R.id.btn_opsi_a, R.id.btn_opsi_b, R.id.btn_opsi_c, R.id.btn_opsi_d)
-        optionContainers = containers.map { findViewById<LinearLayout>(it) }
+        // Opsi Jawaban
+        optionContainers = listOf(
+            findViewById(R.id.btn_opsi_a),
+            findViewById(R.id.btn_opsi_b),
+            findViewById(R.id.btn_opsi_c),
+            findViewById(R.id.btn_opsi_d)
+        )
 
-        val texts = listOf(R.id.txt_a, R.id.txt_b, R.id.txt_c, R.id.txt_d)
-        optionTexts = texts.map { findViewById<TextView>(it) }
+        optionImages = listOf(
+            findViewById(R.id.img_a),
+            findViewById(R.id.img_b),
+            findViewById(R.id.img_c),
+            findViewById(R.id.img_d)
+        )
+
+        optionTexts = listOf(
+            findViewById(R.id.txt_a),
+            findViewById(R.id.txt_b),
+            findViewById(R.id.txt_c),
+            findViewById(R.id.txt_d)
+        )
     }
 
     private fun setupHeader() {

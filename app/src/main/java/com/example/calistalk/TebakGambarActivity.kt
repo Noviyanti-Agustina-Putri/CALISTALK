@@ -102,7 +102,7 @@ class TebakGambarActivity : AppCompatActivity() {
     }
 
     private fun tampilkanSelesai() {
-        Toast.makeText(this, "Selesai!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Kamu hebat!", Toast.LENGTH_SHORT).show()
         finish()
     }
 }
